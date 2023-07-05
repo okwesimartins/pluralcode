@@ -2,7 +2,7 @@ const Sequelize= require("sequelize");
 
 
 const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Saintseverus911@", {
-    host: "pluralcode.academy",
+    host: "162.254.33.4",
     port:3306,
     dialect: "mysql",
     dialectOptions: {
@@ -19,7 +19,7 @@ const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Sain
   const db = {};
   
   db.Sequelize = Sequelize;
-  
+
   db.sequelize = sequelize;
   
   db.enrollment = require("./enrollment.model.js")(sequelize, Sequelize);
