@@ -82,18 +82,18 @@ exports.enrolStudent = async(req, res, next)=>{
 }
 
 //courses
-exports.course = async (req, res, next)=>{
+exports.courseList = async (req, res, next)=>{
     let certresult =[];
     let diplomaresult = [];
 
-const certificateCourses =  Course.findAll({attributes:['id','name','course_fee', 'part_payment', 'percentages'], 
+const certificateCourses = await Course.findAll({attributes:['id','name','course_fee', 'part_payment', 'percentages'], 
     where: {
      course_type: "cert",
      status: "Active"
     }
 
 });
-const diplomaCourses =  Course.findAll({attributes:['id','name','course_fee', 'part_payment', 'percentages'], 
+const diplomaCourses =  await Course.findAll({attributes:['id','name','course_fee', 'part_payment', 'percentages'], 
     where: {
      course_type: "diploma",
      status: "Active"
@@ -184,7 +184,6 @@ diplomaCourses.forEach(value => {
          part_payment_due_amount_ngn: part_payment_due_amount_ngn,
          course_part_payment_fee_vat_ngn : coursefeePartPaymentVat,
          course_part_payment_total_ngn: coursefeeTotalPartPayment,
-         
          course_fee_usd : courseFeeusd,
          course_fee_vat_usd : coursefeeVatUsd,
          course_fee_total_usd : coursefeeTotalUsd,

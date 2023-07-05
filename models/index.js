@@ -19,7 +19,7 @@ const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Sain
   db.sequelize = sequelize;
   
   db.enrollment = require("./enrollment.model.js")(sequelize, Sequelize);
-  db.student = require("./student.model.js")(sequelize, Sequelize);
+//   db.student = require("./student.model.js")(sequelize, Sequelize);
   db.course = require("./course.model.js")(sequelize, Sequelize);
   db.admin = require("./superadmin.model.js")(sequelize, Sequelize);
   module.exports = db;
