@@ -2,7 +2,8 @@ const Sequelize= require("sequelize");
 
 
 const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Saintseverus911@", {
-    host: `pluralcode.academy`,
+    host: "pluralcode.academy",
+    port:3306,
     dialect: "mysql",
     dialectOptions: {
         connectTimeout:100000
