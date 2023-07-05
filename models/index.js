@@ -19,6 +19,7 @@ const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Sain
   const db = {};
   
   db.Sequelize = Sequelize;
+  
   db.sequelize = sequelize;
   
   db.enrollment = require("./enrollment.model.js")(sequelize, Sequelize);
