@@ -1,13 +1,9 @@
 const Sequelize= require("sequelize");
 
 
-const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Saintseverus911@", {
-    host: "pluralcode.academy",
-    port:3306,
+const sequelize =new Sequelize("zlgacom_medicalrecords", "zlgacom_zlgacom", "Saintseverus911@", {
+    host: "zlglobalalliance.com.ng",
     dialect: "mysql",
-    dialectOptions: {
-        connectTimeout:100000
-    },
     operatorsAliases: 0,
     pool: {
       max: 5,
