@@ -5,13 +5,17 @@ const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Sain
     host: "pluralcode.academy",
     port:3306,
     dialect: "mysql",
-   
+    operatorsAliases: 0,
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    }
   });
   
   const db = {};
   
   db.Sequelize = Sequelize;
-
   db.sequelize = sequelize;
   
   db.enrollment = require("./enrollment.model.js")(sequelize, Sequelize);
