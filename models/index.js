@@ -2,8 +2,11 @@ const Sequelize= require("sequelize");
 
 
 const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Saintseverus911@", {
-    host: "pluralcode.academy",
+    host: `pluralcode.academy`,
     dialect: "mysql",
+    dialectOptions: {
+        connectTimeout:100000
+    },
     operatorsAliases: 0,
     pool: {
       max: 5,
