@@ -21,6 +21,7 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 
+  
 app.use("/api", enrolRoutes);
 
 // app.get("/test", (req, res, next)=>{
@@ -29,5 +30,5 @@ app.use("/api", enrolRoutes);
 
 
 
-app.listen(5000);
+app.listen();
   
