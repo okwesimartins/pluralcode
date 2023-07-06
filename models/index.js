@@ -5,7 +5,12 @@ const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Sain
     host: "pluralcode.academy",
     port:3306,
     dialect: "mysql",
-    operatorsAliases: 0,
+    dialectOptions:{
+        connectTimeout: 100000
+    },
+    define:{
+       timestamps: false
+    },
     pool: {
       max: 5,
       min: 0,
