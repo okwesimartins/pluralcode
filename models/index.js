@@ -9,6 +9,7 @@ const sequelize = new Sequelize("pluralcode_database", "pluralcode_admin", "Sain
     pool: {
       max: 5,
       min: 0,
+      acquire: 30000,
       idle: 10000
     }
   });
