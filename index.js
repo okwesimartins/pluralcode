@@ -13,7 +13,7 @@ app.use(cors());
 dotenv.config();
 
 
-db.sequelize.sync()
+db.sequelize.authenticate()
   .then(() => {
     console.log("Synced db.");
   })
@@ -21,7 +21,7 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 
-  
+
 app.use("/api", enrolRoutes);
 
 // app.get("/test", (req, res, next)=>{
